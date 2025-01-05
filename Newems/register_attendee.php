@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Secure password hashing
 
+// Insert 
     // Insert attendee into the database
     $query = "INSERT INTO attendees (name, email, password) VALUES ('$name', '$email', '$password')";
     if (mysqli_query($conn, $query)) {
